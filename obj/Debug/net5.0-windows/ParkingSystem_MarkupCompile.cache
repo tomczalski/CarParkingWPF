@@ -1,5 +1,5 @@
 ﻿ParkingSystem
-1.0.0.0
+
 
 winexe
 C#
@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\ParkingSystem\App.xaml
-2-1767713757
+11407045341
 
-6-1639998057
+3-1233169557
 193-1891726104
-Controls\AddCarControl.xaml;MainWindow.xaml;
+MainWindow.xaml;
 
-True
+False
 

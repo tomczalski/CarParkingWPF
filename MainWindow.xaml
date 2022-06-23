@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TabControl>
+            <TabItem Header="Dodawanie samochodów">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/background.jpg"/>
+                    </Grid.Background>
+                    
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Usuwanie samochodów">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/background.jpg"/>
+                    </Grid.Background>
+                    
+                    
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wyszukiwanie">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/background.jpg"/>
+                    </Grid.Background>
+
+
+
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
