@@ -27,6 +27,9 @@ namespace ParkingSystem
             InitializeComponent();
 
             DataContext = this.GetCars();
+
+            tbCount.Text = (100 - Cars.Count()).ToString();
+            tbCount2.Text = (100 - Cars.Count()).ToString();
         }
 
         public ObservableCollection<Car> Cars = new ObservableCollection<Car>();
@@ -49,7 +52,10 @@ namespace ParkingSystem
 
                 Cars.Add(new Car() { Brand = txtBrand.Text, Model = txtModel.Text, RegNr = txtRegNr.Text, Surname = txtSurname.Text, Name = txtName.Text, Type = cbType.Text });
                 txtBrand.Clear(); txtModel.Clear(); txtRegNr.Clear(); txtSurname.Clear(); txtName.Clear(); cbType.SelectedIndex = -1;
+                tbCount.Text = (100 - Cars.Count()).ToString();
+                tbCount2.Text = (100 - Cars.Count()).ToString();
                 MessageBox.Show("Dodano pojazd.", "Dodawanie pomyślne", MessageBoxButton.OK);
+                
             }
         }
 
@@ -61,6 +67,8 @@ namespace ParkingSystem
                 {
                     Cars.Remove(el);
                     MessageBox.Show("Usunięto pojazd.", "Usuwanie pomyślne", MessageBoxButton.OK);
+                    tbCount.Text = (100 - Cars.Count()).ToString();
+                    tbCount2.Text = (100 - Cars.Count()).ToString();
                     break;
                 }
                 

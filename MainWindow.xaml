@@ -51,6 +51,9 @@
                         </ListView.View>
                     </ListView>
 
+                    <Label Content="Ilość wolnych miejsc:" HorizontalAlignment="Center" Margin="0,333,0,0" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock Name="tbCount" HorizontalAlignment="Left" Margin="521,296,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="75" FontWeight="Bold" Foreground="#FF104700"/>
+
 
                 </Grid>
             </TabItem>
@@ -77,6 +80,9 @@
                         </ListView.View>
                     </ListView>
 
+                    <Label Content="Ilość wolnych miejsc:" HorizontalAlignment="Left" Margin="25,296,0,0" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock Name="tbCount2" HorizontalAlignment="Left" Margin="268,268,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="75" FontWeight="Bold" Foreground="#FF104700"/>
+
 
 
                 </Grid>
@@ -97,7 +103,7 @@
                     <Label Content="Nazwisko: " HorizontalAlignment="Left" Margin="45,180,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
                     <Label Content="Imię: " HorizontalAlignment="Left" Margin="45,210,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
                     <Label Content="Typ: " HorizontalAlignment="Left" Margin="45,240,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
-                    
+
                     <TextBlock Name="tbBrand"  HorizontalAlignment="Left" Margin="130,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
                     <TextBlock Name="tbModel"  HorizontalAlignment="Left" Margin="130,125,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
                     <TextBlock Name="tbRegNr"  HorizontalAlignment="Left" Margin="260,155,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
