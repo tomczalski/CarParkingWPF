@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ParkingSystem"
+        xmlns:uc="clr-namespace:ParkingSystem.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
         <TabControl>
             <TabItem Header="Dodawanie samochodów">
@@ -13,8 +15,43 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="/background.jpg"/>
                     </Grid.Background>
-                    
-                    
+                    <Label Content="Marka:" HorizontalAlignment="Left" Margin="59,70,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+                    <Label Content="Model:" HorizontalAlignment="Left" Margin="59,100,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+                    <Label Content="Nr Rejestracyjny:" HorizontalAlignment="Left" Margin="7,130,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+                    <Label Content="Nazwisko:" HorizontalAlignment="Left" Margin="42,160,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+                    <Label Content="Imię:" HorizontalAlignment="Left" Margin="69,190,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+                    <Label Content="Typ:" HorizontalAlignment="Left" Margin="74,220,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+
+                    <TextBox Name="txtBrand" HorizontalAlignment="Left" Margin="115,75,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Name="txtModel" HorizontalAlignment="Left" Margin="115,105,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Name="txtRegNr" HorizontalAlignment="Left" Margin="115,135,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Name="txtSurname" HorizontalAlignment="Left" Margin="115,165,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Name="txtName" HorizontalAlignment="Left" Margin="115,195,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+
+                    <ComboBox Name="cbType" HorizontalAlignment="Left" Margin="115,225,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem Name="cbCar" Content="Samochód osobowy"/>
+                        <ComboBoxItem Name="cbTruck" Content="Samochód ciężarowy"/>
+                        <ComboBoxItem Name="cbBus" Content="Autobus"/>
+                        <ComboBoxItem Name="cbBike" Content="Motocykl"/>
+                    </ComboBox>
+
+                    <Button Name="addBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="110,265,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Click="addBtn_Click"/>
+
+                    <ListView Name="CarList" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="150" Margin="328,89,0,0" VerticalAlignment="Top" Width="380"  >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Marka" DisplayMemberBinding="{Binding Path=Brand}" />
+                                <GridViewColumn Header="Model" DisplayMemberBinding="{Binding Path=Model}" />
+                                <GridViewColumn Header="Nr Rejestracyjny" DisplayMemberBinding="{Binding Path=RegNr}" />
+                                <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding Path=Surname}" />
+                                <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding Path=Name}" />
+                                <GridViewColumn Header="Typ" DisplayMemberBinding="{Binding Path=Type}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+
                 </Grid>
             </TabItem>
             <TabItem Header="Usuwanie samochodów">
@@ -22,8 +59,25 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="/background.jpg"/>
                     </Grid.Background>
-                    
-                    
+
+                    <Label Content="Wpisz Nr Rejestracyjny pojazdu który chcesz usunać:" HorizontalAlignment="Left" Margin="45,30,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+                    <TextBox Name="txtDelete" HorizontalAlignment="Left" Margin="410,35,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Name="delBtn" Content="Usuń" HorizontalAlignment="Left" Margin="550,30,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Click="delBtn_Click"/>
+
+                    <ListView Name="CarList2" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="150" Margin="328,89,0,0" VerticalAlignment="Top" Width="380"  >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Marka" DisplayMemberBinding="{Binding Path=Brand}" />
+                                <GridViewColumn Header="Model" DisplayMemberBinding="{Binding Path=Model}" />
+                                <GridViewColumn Header="Nr Rejestracyjny" DisplayMemberBinding="{Binding Path=RegNr}" />
+                                <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding Path=Surname}" />
+                                <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding Path=Name}" />
+                                <GridViewColumn Header="Typ" DisplayMemberBinding="{Binding Path=Type}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+
 
                 </Grid>
             </TabItem>
@@ -33,10 +87,31 @@
                         <ImageBrush ImageSource="/background.jpg"/>
                     </Grid.Background>
 
+                    <Label Content="Wpisz Nr Rejestracyjny pojazdu który chcesz wyszukać:" HorizontalAlignment="Left" Margin="45,30,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Bold"/>
+                    <TextBox Name="txtSearch" HorizontalAlignment="Left" Margin="410,35,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Name="searchBtn" Content="Szukaj" HorizontalAlignment="Left" Margin="550,30,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Click="searchBtn_Click"/>
+
+                    <Label Content="Marka: " HorizontalAlignment="Left" Margin="45,90,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
+                    <Label Content="Model: " HorizontalAlignment="Left" Margin="45,120,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
+                    <Label Content="Numer rejestracyjny: " HorizontalAlignment="Left" Margin="45,150,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
+                    <Label Content="Nazwisko: " HorizontalAlignment="Left" Margin="45,180,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
+                    <Label Content="Imię: " HorizontalAlignment="Left" Margin="45,210,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
+                    <Label Content="Typ: " HorizontalAlignment="Left" Margin="45,240,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" />
+                    
+                    <TextBlock Name="tbBrand"  HorizontalAlignment="Left" Margin="130,95,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
+                    <TextBlock Name="tbModel"  HorizontalAlignment="Left" Margin="130,125,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
+                    <TextBlock Name="tbRegNr"  HorizontalAlignment="Left" Margin="260,155,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
+                    <TextBlock Name="tbSurname"  HorizontalAlignment="Left" Margin="160,185,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
+                    <TextBlock Name="tbName"  HorizontalAlignment="Left" Margin="110,215,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
+                    <TextBlock Name="tbType"  HorizontalAlignment="Left" Margin="100,245,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontStyle="Oblique" FontSize="20" FontWeight="Bold" Foreground="#FFFDFDFD" Width="126"/>
+
+
+
 
 
                 </Grid>
             </TabItem>
+
         </TabControl>
 
     </Grid>

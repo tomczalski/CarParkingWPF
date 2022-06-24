@@ -20,3 +20,6 @@ C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\Parki
 C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\ParkingSystem\obj\Debug\net5.0-windows\ref\ParkingSystem.dll
 C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\ParkingSystem\obj\Debug\net5.0-windows\ParkingSystem.pdb
 C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\ParkingSystem\obj\Debug\net5.0-windows\ParkingSystem.genruntimeconfig.cache
+C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\ParkingSystem\obj\Debug\net5.0-windows\Controls\AddCarControl.g.cs
+C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\ParkingSystem\obj\Debug\net5.0-windows\Controls\AddCarControl.baml
+C:\Users\tomcz\OneDrive\Pulpit\Zajęcia\Szkolenie techniczne\ParkingSystem\ParkingSystem\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
